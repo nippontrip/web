@@ -1,0 +1,3 @@
+Contact: mailto:info@nippontrip.com.mx
+Preferred-Languages: es, en
+Canonical: https://nippontrip.com.mx/.well-known/security.txt

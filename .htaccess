@@ -1,0 +1,49 @@
+# =============================================
+# Cabeceras de Seguridad - nippontrip.com.mx
+# =============================================
+
+<IfModule mod_headers.c>
+    # Prevenir Clickjacking - no permitir que el sitio sea embebido en iframes externos
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevenir MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Habilitar proteccion XSS del navegador
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy - enviar solo el origen en requests cross-origin
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy - restringir acceso a APIs del navegador
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
+
+    # Content Security Policy - permitir recursos propios y servicios necesarios
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://www.google.com;"
+
+    # Strict Transport Security - forzar HTTPS por 1 anio
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# =============================================
+# Compresion GZIP
+# =============================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# =============================================
+# Cache del navegador
+# =============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>

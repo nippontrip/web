@@ -247,17 +247,19 @@
   <!-- Conversión Google Ads: Contacto WhatsApp Ecotour (cuenta nueva AW-18234437122) -->
   <script>
     function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) !== 'undefined') {
-          window.location = url;
-        }
+      var navigated = false;
+      var go = function () {
+        if (navigated || typeof url === 'undefined') return;
+        navigated = true;
+        window.open(url, '_blank', 'noopener');
       };
       gtag('event', 'conversion', {
         'send_to': 'AW-18234437122/MH9QCO-EwsIcEILc7fZD',
         'value': 1.0,
         'currency': 'MXN',
-        'event_callback': callback
+        'event_callback': go
       });
+      setTimeout(go, 400);
       return false;
     }
 
@@ -291,7 +293,7 @@
         <a href="#viajeros">Viajeros</a>
         <a href="#faq">Preguntas</a>
       </div>
-      <a class="btn btn-primary" href="https://wa.me/5219614503390?text=Hola%2C%20me%20interesa%20Ecotour%20Japan%20desde%2085%2C000%20MXN" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.me/5219614503390?text=Hola%20NipponTrip%2C%20vi%20el%20Ecotour%20Japan%2014%20d%C3%ADas%20desde%20%2485%2C000%20MXN.%20%C2%BFMe%20comparten%20fechas%20disponibles%20y%20formas%20de%20pago%3F%20Me%20interesa%20hostal%20%2F%20vuelo%20incluido." target="_blank" rel="noopener">WhatsApp</a>
     </nav>
   </header>
 
@@ -304,7 +306,7 @@
           <h1>Ecotour Japan 14 días</h1>
           <p>Vive Japón con una experiencia cultural, urbana y accesible: Osaka, Kioto, Nara, Kobe, Universal Studios, Tokio, Kamakura y más, acompañado por guía en español.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5219614503390?text=Hola%2C%20me%20interesa%20Ecotour%20Japan%20desde%2085%2C000%20MXN" target="_blank" rel="noopener">Consultar disponibilidad por WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/5219614503390?text=Hola%20NipponTrip%2C%20vi%20el%20Ecotour%20Japan%2014%20d%C3%ADas%20desde%20%2485%2C000%20MXN.%20%C2%BFMe%20comparten%20fechas%20disponibles%20y%20formas%20de%20pago%3F%20Me%20interesa%20hostal%20%2F%20vuelo%20incluido." target="_blank" rel="noopener">Consultar disponibilidad por WhatsApp</a>
             <a class="btn btn-outline" href="#itinerario">Ver itinerario</a>
           </div>
           <div class="trust">
@@ -334,7 +336,7 @@
             <div><span>Vuelo</span><b>Redondo desde CDMX</b></div>
             <div><span>Pago</span><b>Hasta 12 MSI</b></div>
           </div>
-          <a class="btn btn-primary" style="width:100%" href="https://wa.me/5219614503390?text=Hola%2C%20me%20interesa%20Ecotour%20Japan%20desde%2085%2C000%20MXN" target="_blank" rel="noopener">Consultar disponibilidad</a>
+          <a class="btn btn-primary" style="width:100%" href="https://wa.me/5219614503390?text=Hola%20NipponTrip%2C%20vi%20el%20Ecotour%20Japan%2014%20d%C3%ADas%20desde%20%2485%2C000%20MXN.%20%C2%BFMe%20comparten%20fechas%20disponibles%20y%20formas%20de%20pago%3F%20Me%20interesa%20hostal%20%2F%20vuelo%20incluido." target="_blank" rel="noopener">Consultar disponibilidad</a>
         </aside>
       </div>
     </section>
@@ -569,7 +571,7 @@
             <div style="margin-top:8px;font-weight:900;color:#bff5d1">💳 Disponible con tarjeta hasta 12 MSI</div>
             <p>Escríbenos por WhatsApp y te compartimos fechas disponibles, formas de pago y detalles completos del paquete.</p>
           </div>
-          <a class="btn btn-primary" href="https://wa.me/5219614503390?text=Hola%2C%20me%20interesa%20Ecotour%20Japan%20desde%2085%2C000%20MXN" target="_blank" rel="noopener">Consultar disponibilidad por WhatsApp</a>
+          <a class="btn btn-primary" href="https://wa.me/5219614503390?text=Hola%20NipponTrip%2C%20vi%20el%20Ecotour%20Japan%2014%20d%C3%ADas%20desde%20%2485%2C000%20MXN.%20%C2%BFMe%20comparten%20fechas%20disponibles%20y%20formas%20de%20pago%3F%20Me%20interesa%20hostal%20%2F%20vuelo%20incluido." target="_blank" rel="noopener">Consultar disponibilidad por WhatsApp</a>
         </div>
       </div>
     </section>
@@ -584,7 +586,7 @@
   </footer>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/5219614503390?text=Hola%2C%20me%20interesa%20Ecotour%20Japan%20desde%2085%2C000%20MXN" target="_blank" rel="noopener" id="whatsapp-float" aria-label="Contactar por WhatsApp" style="position:fixed;bottom:24px;right:24px;z-index:9999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.45);transition:transform .2s ease,box-shadow .2s ease;text-decoration:none" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 22px rgba(37,211,102,.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,.45)'">
+<a href="https://wa.me/5219614503390?text=Hola%20NipponTrip%2C%20vi%20el%20Ecotour%20Japan%2014%20d%C3%ADas%20desde%20%2485%2C000%20MXN.%20%C2%BFMe%20comparten%20fechas%20disponibles%20y%20formas%20de%20pago%3F%20Me%20interesa%20hostal%20%2F%20vuelo%20incluido." target="_blank" rel="noopener" id="whatsapp-float" aria-label="Contactar por WhatsApp" style="position:fixed;bottom:24px;right:24px;z-index:9999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.45);transition:transform .2s ease,box-shadow .2s ease;text-decoration:none" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 22px rgba(37,211,102,.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,.45)'">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="34" height="34" fill="white">
     <path d="M16.004 2.667A13.22 13.22 0 0 0 2.667 15.89a13.1 13.1 0 0 0 1.795 6.612L2.667 29.333l7.07-1.853a13.24 13.24 0 0 0 6.267 1.587h.005A13.22 13.22 0 0 0 29.333 15.89 13.22 13.22 0 0 0 16.004 2.667zm0 24.2a10.97 10.97 0 0 1-5.6-1.533l-.4-.24-4.2 1.1 1.12-4.093-.263-.418a10.93 10.93 0 0 1-1.68-5.82A10.98 10.98 0 0 1 16.004 4.9a10.98 10.98 0 0 1 11.003 10.99 10.98 10.98 0 0 1-11.003 10.977zm6.027-8.23c-.33-.166-1.955-.965-2.258-1.075-.303-.11-.523-.166-.743.166-.22.33-.855 1.075-1.048 1.296-.193.22-.386.248-.716.083-.33-.166-1.394-.514-2.656-1.638-.982-.875-1.644-1.955-1.837-2.285-.193-.33-.02-.51.145-.674.149-.148.33-.386.496-.58.166-.193.22-.33.33-.55.11-.22.055-.413-.028-.58-.083-.165-.743-1.79-1.018-2.452-.268-.643-.54-.556-.743-.566-.193-.01-.413-.012-.633-.012s-.58.083-.883.413c-.303.33-1.157 1.13-1.157 2.756s1.185 3.197 1.35 3.418c.166.22 2.332 3.56 5.652 4.994.79.34 1.406.544 1.886.697.793.252 1.514.216 2.085.131.636-.095 1.955-.8 2.23-1.572.276-.772.276-1.434.193-1.572-.083-.138-.303-.22-.633-.386z"/>
   </svg>
